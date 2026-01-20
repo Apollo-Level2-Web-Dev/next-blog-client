@@ -1,0 +1,539 @@
+{
+	"info": {
+		"_postman_id": "f2432a48-1a59-4c0d-ab76-c84094b138ca",
+		"name": "Prisma Blog",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26694196"
+	},
+	"item": [
+		{
+			"name": "Sign up with email & password",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Origin",
+						"value": "http://localhost:4000",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Fahim Ahammed Firoz\",\n    \"email\": \"fahimfiroz.ph@gmail.com\",\n    \"password\": \"fahim1234\",\n    \"image\": \"https://example.com/image1.png\",\n    \"phone\": \"01712345678\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/auth/sign-up/email",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"sign-up",
+						"email"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sign in with email & password",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Origin",
+						"value": "http://localhost:4000",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"admin2@admin.com\",\n    \"password\": \"admin1234\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/auth/sign-in/email",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"sign-in",
+						"email"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create post",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Origin",
+						"value": "http://localhost:4000",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\": \"this is post title1032432\",\n  \"content\": \"this is post content 10124234234\",\n  \"tags\": [\"web\", \"next\", \"level\", \"ph\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/posts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Post",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Origin",
+						"value": "http://localhost:4000",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/posts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"posts"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "title",
+							"disabled": true
+						},
+						{
+							"key": "tags",
+							"value": "web,ph,next",
+							"disabled": true
+						},
+						{
+							"key": "isFeatured",
+							"value": "false",
+							"disabled": true
+						},
+						{
+							"key": "status",
+							"value": "ARCHIVED",
+							"disabled": true
+						},
+						{
+							"key": "authorId",
+							"value": "KvqN6CZH1ioNaG0j2QD4phXujLWeqckd",
+							"disabled": true
+						},
+						{
+							"key": "page",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "4",
+							"disabled": true
+						},
+						{
+							"key": "sortBy",
+							"value": "title",
+							"disabled": true
+						},
+						{
+							"key": "sortOrder",
+							"value": "asc",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Post by ID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Origin",
+						"value": "http://localhost:4000",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/posts/f22891b2-60a0-4473-bbca-e741d661b5a7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"posts",
+						"f22891b2-60a0-4473-bbca-e741d661b5a7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get my posts",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Origin",
+						"value": "http://localhost:4000",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/posts/my-posts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"posts",
+						"my-posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update user post",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Origin",
+						"value": "http://localhost:4000",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"this is updated title 11111******\",\n    \"isFeatured\": false\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/posts/2de1643c-582c-4bf5-9744-05b85a580aeb",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"posts",
+						"2de1643c-582c-4bf5-9744-05b85a580aeb"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete post",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Origin",
+						"value": "http://localhost:4000",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/posts/2de1643c-582c-4bf5-9744-05b85a580aeb",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"posts",
+						"2de1643c-582c-4bf5-9744-05b85a580aeb"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Comment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Origin",
+						"value": "http://localhost:4000",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"content\" : \"comment 1 reply test 2\",\n  \"postId\": \"f22891b2-60a0-4473-bbca-e741d661b5a7\",\n  \"parentId\": \"b42d4e02-18ad-46b4-975b-9dfecb8d5c5b\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/comments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get comment by Id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Origin",
+						"value": "http://localhost:4000",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/comments/6ecd39b5-18d3-4ce0-aefd-da3fd6e89938",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"comments",
+						"6ecd39b5-18d3-4ce0-aefd-da3fd6e89938"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Comments by Author",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Origin",
+						"value": "http://localhost:4000",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/comments/author/KvqN6CZH1ioNaG0j2QD4phXujLWeqckd",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"comments",
+						"author",
+						"KvqN6CZH1ioNaG0j2QD4phXujLWeqckd"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete comment",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Origin",
+						"value": "http://localhost:4000",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/comments/b42d4e02-18ad-46b4-975b-9dfecb8d5c5b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"comments",
+						"b42d4e02-18ad-46b4-975b-9dfecb8d5c5b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update comment",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Origin",
+						"value": "http://localhost:4000",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"content\": \"this is updated comment 1000\"\n    // \"status\" : \"APPROVED\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/comments/44edc82b-2833-4244-908c-61c2da3e02c4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"comments",
+						"44edc82b-2833-4244-908c-61c2da3e02c4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Moderate comment - Admin",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Origin",
+						"value": "http://localhost:4000",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"status\" : \"REJECT\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/comments/44edc82b-2833-4244-908c-61c2da3e02c4/moderate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"comments",
+						"44edc82b-2833-4244-908c-61c2da3e02c4",
+						"moderate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Stats",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Origin",
+						"value": "http://localhost:4000",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/posts/stats",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"posts",
+						"stats"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Origin",
+						"value": "http://localhost:4000",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/posts/dkljsf",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"posts",
+						"dkljsf"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
