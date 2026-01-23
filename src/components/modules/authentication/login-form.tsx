@@ -32,8 +32,6 @@ export function LoginForm({ ...props }: React.ComponentProps<typeof Card>) {
       provider: "google",
       callbackURL: "http://localhost:3000",
     });
-
-    console.log(data);
   };
 
   const form = useForm({

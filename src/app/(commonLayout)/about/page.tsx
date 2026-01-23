@@ -7,8 +7,6 @@ export default function AboutPage() {
   const [data, setData] = useState();
   const [error, setError] = useState<{ message: string } | null>(null);
 
-  console.log(data);
-  console.log(error);
   useEffect(() => {
     (async () => {
       const { data, error } = await getBlogs();
